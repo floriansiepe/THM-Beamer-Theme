@@ -1,0 +1,60 @@
+\definecolor{THMGray}{RGB}{74, 92, 102}
+\definecolor{THMGreen}{RGB}{128, 186, 36}
+
+
+\setbeamercolor{fuss}{fg=white, bg=THMGray}
+\setbeamercolor{title}{fg=THMGray}
+\setbeamercolor{subtitle}{fg=THMGreen}
+\setbeamercolor{author}{fg=THMGreen}
+\setbeamercolor{date}{fg=THMGray}
+\setbeamercolor{normal text}{fg=THMGray}
+\setbeamercolor{frametitle}{fg=THMGray}
+\setbeamercolor{item}{fg=THMGreen}
+
+\setbeamersize{text margin left=5mm,text margin right=5mm} 
+
+\setbeamerfont{title}{shape=\bfseries}
+
+\setbeamertemplate{itemize items}[square]
+
+\setbeamertemplate{headline}{
+	\vspace*{4mm}
+	\hfill\includegraphics[width=2cm]{themeRessources/STP.jpg}\hspace{3mm}\includegraphics[width=2cm]{themeRessources/THM.png}\hspace*{4mm}
+}
+
+\setbeamertemplate{frametitle}{
+	\vspace{-7mm}
+	\insertframetitle
+}
+
+\setbeamertemplate{footline}{
+	\begin{beamercolorbox}{fuss}{
+		\vskip1pt%
+		\makebox[0pt][l]{\,\hspace*{4mm}{\insertsection}}%
+		\hspace*{\fill}\insertshorttitle\ - \insertsubtitle\hspace*{\fill}%
+		\llap{Seite \insertpagenumber}\hspace*{4mm}}
+		\vspace*{1.5mm}
+	\end{beamercolorbox}
+}
+
+\setbeamercolor{block title}{fg=white, bg=THMGreen}
+\setbeamercolor{block body}{fg=THMGray, bg=white}
+
+\setbeamercolor{block title alerted}{fg=white, bg=red}
+\setbeamercolor{block title example}{fg=white, bg=THMGray}
+
+\newcommand{\insertKermit}{
+	\begin{center}
+	\begin{frame}
+	\includegraphics[width=8cm]{themeRessources/Kermit.png}
+	\end{frame}
+	\end{center}
+}
+
+\newcommand{\insertDilbert}{
+	\begin{center}
+		\begin{frame}
+		\includegraphics[width=6cm]{themeRessources/Dilbert.png}
+	\end{frame}
+\end{center}
+}
