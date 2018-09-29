@@ -1,6 +1,13 @@
+\newcommand{\colA}[1]{\begin{columns}[t]\begin{column}{#1}} 
+\newcommand{\colB}[1]{\end{column}\begin{column}{#1}} 
+\newcommand{\colEnd}{\end{column}\end{columns}}
+
 \definecolor{THMGray}{RGB}{74, 92, 102}
 \definecolor{THMGreen}{RGB}{128, 186, 36}
 
+%\logo{\vspace{0.3\paperheight}\includegraphics[angle=90,scale=0.05]{themeRessources/vi.png}}
+
+\titlegraphic{\includegraphics[scale=0.07]{themeRessources/vi.png}}
 
 \setbeamercolor{fuss}{fg=white, bg=THMGray}
 \setbeamercolor{title}{fg=THMGray}
@@ -9,7 +16,19 @@
 \setbeamercolor{date}{fg=THMGray}
 \setbeamercolor{normal text}{fg=THMGray}
 \setbeamercolor{frametitle}{fg=THMGray}
+\setbeamercolor{structure}{fg=THMGray}
 \setbeamercolor{item}{fg=THMGreen}
+
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+
+
+% Create conditional for no displaying logo on some slides
+\newif\ifplacelogo % create a new conditional
+\placelogotrue % set it to true
+\logo{\ifplacelogo\vspace{0.3\paperheight}\includegraphics[angle=90,scale=0.05]{themeRessources/vi.png}\fi}
+
+\placelogofalse
 
 \setbeamersize{text margin left=5mm,text margin right=5mm} 
 
@@ -25,6 +44,22 @@
 \setbeamertemplate{frametitle}{
 	\vspace{-7mm}
 	\insertframetitle
+}
+
+\AtBeginPart{
+  \placelogofalse
+  \let\insertpartnumber\relax
+  \let\partname\relax
+  \frame{\partpage}
+    \placelogofalse
+}
+
+\AtBeginSection{
+  \placelogofalse
+  \let\insertsectionnumber\relax
+  \let\sectionname\relax
+  \frame{\sectionpage}
+  \placelogotrue
 }
 
 \setbeamertemplate{footline}{
