@@ -25,7 +25,6 @@
 
 % Create conditional for no displaying logo on some slides
 \newif\ifplacelogo % create a new conditional
-\placelogotrue % set it to true
 \logo{\ifplacelogo\vspace{0.3\paperheight}\includegraphics[angle=90,scale=0.05]{themeRessources/vi.png}\fi}
 
 \placelogofalse
@@ -44,6 +43,7 @@
 \setbeamertemplate{frametitle}{
 	\vspace{-7mm}
 	\insertframetitle
+
 }
 
 \AtBeginPart{
@@ -63,6 +63,16 @@
 }
 
 \setbeamertemplate{footline}{
+	\color{THMGreen}% to color the progressbar
+	  \hspace*{-\beamer@leftmargin}%
+	  \rule{\beamer@leftmargin}{0pt}%
+	  \rlap{\rule{\dimexpr
+	      \beamer@startpageofframe\dimexpr
+	      \beamer@rightmargin+\textwidth\relax/\beamer@endpageofdocument}{3pt}}
+	  % next 'empty' line is mandatory!
+	  
+	  \vspace{0\baselineskip}
+	  {}
 	\begin{beamercolorbox}{fuss}{
 		\vskip1pt%
 		\makebox[0pt][l]{\,\hspace*{4mm}{\insertsection}}%
