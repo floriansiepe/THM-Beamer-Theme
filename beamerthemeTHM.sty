@@ -7,7 +7,6 @@
 
 %\logo{\vspace{0.3\paperheight}\includegraphics[angle=90,scale=0.05]{themeRessources/vi.png}}
 
-\titlegraphic{\includegraphics[scale=0.07]{themeRessources/vi.png}}
 
 \setbeamercolor{fuss}{fg=white, bg=THMGray}
 \setbeamercolor{title}{fg=THMGray}
@@ -25,8 +24,6 @@
 
 % Create conditional for no displaying logo on some slides
 \newif\ifplacelogo % create a new conditional
-\logo{\ifplacelogo\vspace{0.3\paperheight}\includegraphics[angle=90,scale=0.05]{themeRessources/vi.png}\fi}
-
 \placelogofalse
 
 \setbeamersize{text margin left=5mm,text margin right=5mm} 
@@ -44,7 +41,8 @@
 
 \setbeamertemplate{headline}{
 	\vspace*{4mm}
-	\hfill\includegraphics[width=2cm]{themeRessources/STP.jpg}\hspace{3mm}\includegraphics[width=2cm]{themeRessources/THM.png}\hspace*{4mm}
+	\hfill
+	\hspace{3mm}\includegraphics[width=2cm]{themeRessources/THM.png}\hspace*{4mm}
 }
 
 \setbeamertemplate{frametitle}{
@@ -56,19 +54,16 @@
 }
 
 \AtBeginPart{
-  \placelogofalse
+
   \let\insertpartnumber\relax
   \let\partname\relax
   \frame{\partpage}
-    \placelogofalse
 }
 
 \AtBeginSection{
-  \placelogofalse
   \let\insertsectionnumber\relax
   \let\sectionname\relax
   \frame{\sectionpage}
-  \placelogotrue
 }
 
 \setbeamertemplate{footline}{
@@ -97,18 +92,3 @@
 \setbeamercolor{block title alerted}{fg=white, bg=red}
 \setbeamercolor{block title example}{fg=white, bg=THMGray}
 
-\newcommand{\insertKermit}{
-	\begin{center}
-	\begin{frame}
-	\includegraphics[width=8cm]{themeRessources/Kermit.png}
-	\end{frame}
-	\end{center}
-}
-
-\newcommand{\insertDilbert}{
-	\begin{center}
-		\begin{frame}
-		\includegraphics[width=6cm]{themeRessources/Dilbert.png}
-	\end{frame}
-\end{center}
-}
